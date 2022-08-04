@@ -33,6 +33,8 @@ body {
   margin: 100px auto;
   padding: 20px;
   display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 .cards .card {
   background-color: #fff;
@@ -87,7 +89,36 @@ body {
   opacity: var(--opacityInsideQuotation);
   margin: 0 0 20px 0;
 }
+.cards .card-one {
+  grid-column: 1/3;
+}
+.cards .card-four {
+  grid-column: 2/4;
+  grid-row: 2;
+}
+.cards .card-five {
+  grid-column: 4;
+  grid-row: 1/3;
+}
 
+@media (max-width: 765px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .cards .card.card-one {
+    grid-column: 1;
+  }
+  .cards .card.card-four {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .cards .card.card-five {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
 .attribution {
   font-size: 11px;
   text-align: center;
